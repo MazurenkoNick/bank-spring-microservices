@@ -1,4 +1,4 @@
-package com.mazurenko.loans.model;
+package com.mazurenko.cards.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,8 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class CustomerDto {
+public class Customer {
 
     private int customerId;
-
 }

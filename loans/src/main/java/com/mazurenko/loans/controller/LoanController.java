@@ -1,6 +1,6 @@
 package com.mazurenko.loans.controller;
 
-import com.mazurenko.loans.model.CustomerDto;
+import com.mazurenko.loans.model.Customer;
 import com.mazurenko.loans.model.Loan;
 import com.mazurenko.loans.repository.LoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +15,7 @@ public class LoanController {
     private LoanRepository loanRepository;
 
     @PostMapping("/myLoans")
-    public List<Loan> getLoanDetails(@RequestBody CustomerDto customerDto) {
+    public List<Loan> getLoanDetails(@RequestBody Customer customerDto) {
         return loanRepository.findByCustomerIdOrderByStartDtDesc(customerDto.getCustomerId());
     }
 }
