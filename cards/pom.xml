@@ -55,6 +55,9 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                    <image>
+                        <name>mazurenko/cards</name>
+                    </image>
                 </configuration>
             </plugin>
         </plugins>

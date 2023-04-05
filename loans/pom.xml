@@ -55,6 +55,9 @@
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
+                    <image>
+                        <name>loans-service</name>
+                    </image>
                 </configuration>
             </plugin>
         </plugins>
