@@ -52,7 +52,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>4nm2/${project.artifactId}</name>
+                        <name>mazurenko/${project.artifactId}</name>
                     </image>
                 </configuration>
             </plugin>

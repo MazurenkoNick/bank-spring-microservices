@@ -4,9 +4,6 @@ import com.mazurenko.accounts.model.*;
 import com.mazurenko.accounts.repository.AccountRepository;
 import com.mazurenko.accounts.service.client.CardsFeignClient;
 import com.mazurenko.accounts.service.client.LoansFeignClient;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
