@@ -25,7 +25,7 @@ public class CardController {
 
     @PostMapping("/myCards")
     public List<Card> getCardDetails(
-            @RequestHeader("eazybank-correlation-id") String correlationId,
+            @RequestHeader(value = "eazybank-correlation-id", required = false) String correlationId,
             @RequestBody Customer customer) {
         System.out.println(number + "correlationID: " + correlationId);
         return cardRepository.findByCustomerId(customer.getCustomerId());

@@ -20,6 +20,9 @@ public class ResponseTraceFilter implements GlobalFilter {
     @Autowired
     FilterUtility filterUtility;
 
+
+    // POST FILTER because using .then()
+    // see https://cloud.spring.io/spring-cloud-gateway/multi/multi__global_filters.html#_global_filters
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         HttpHeaders headers = exchange.getRequest().getHeaders();

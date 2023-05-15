@@ -33,7 +33,7 @@ public class AccountController {
 
     @GetMapping("/myAccount/customerDetails")
     public CustomerDetails getCustomerDetails(
-            @RequestHeader("eazybank-correlation-id") String correlationId,
+            @RequestHeader(value = "eazybank-correlation-id", required = false) String correlationId,
             @RequestBody Customer customer) {
         Account account = accountRepository.findByCustomerCustomerId(customer.getCustomerId());
         List<Card> cards = cardsFeignClient.getCardDetails(correlationId, customer);

@@ -20,7 +20,7 @@ public class LoanController {
 
     @PostMapping("/myLoans")
     public List<Loan> getLoanDetails(
-            @RequestHeader("eazybank-correlation-id") String correlationId,
+            @RequestHeader(value = "eazybank-correlation-id", required = false) String correlationId,
             @RequestBody Customer customerDto) {
         System.out.println(message);
         return loanRepository.findByCustomerIdOrderByStartDtDesc(customerDto.getCustomerId());
