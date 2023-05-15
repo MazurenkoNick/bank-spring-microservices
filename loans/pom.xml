@@ -81,7 +81,7 @@
                         </exclude>
                     </excludes>
                     <image>
-                        <name>loans-service</name>
+                        <name>4nm2/loans</name>
                     </image>
                 </configuration>
             </plugin>

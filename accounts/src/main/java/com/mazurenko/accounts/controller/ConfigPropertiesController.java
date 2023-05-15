@@ -21,7 +21,6 @@ public class ConfigPropertiesController {
     private String getPropertyDetails() throws JsonProcessingException {
         ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
         Properties properties = new Properties(accountsServiceConfig);
-        String jsonString = ow.writeValueAsString(properties);
-        return jsonString;
+        return ow.writeValueAsString(properties);
     }
 }

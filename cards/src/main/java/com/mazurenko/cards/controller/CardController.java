@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,8 +24,10 @@ public class CardController {
     private String number;
 
     @PostMapping("/myCards")
-    public List<Card> getCardDetails(@RequestBody Customer customer) {
-        System.out.println(number);
+    public List<Card> getCardDetails(
+            @RequestHeader("eazybank-correlation-id") String correlationId,
+            @RequestBody Customer customer) {
+        System.out.println(number + "correlationID: " + correlationId);
         return cardRepository.findByCustomerId(customer.getCustomerId());
     }
 }

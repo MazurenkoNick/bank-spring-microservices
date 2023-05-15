@@ -26,11 +26,18 @@ public class AccountController {
         return accountRepository.findByCustomerCustomerId(customerId);
     }
 
-    @GetMapping("/customerDetails")
-    public CustomerDetails getCustomerDetails(@RequestBody Customer customer) {
+    @GetMapping("/myAccount")
+    public String sayHello() {
+        return "Hello there!!";
+    }
+
+    @GetMapping("/myAccount/customerDetails")
+    public CustomerDetails getCustomerDetails(
+            @RequestHeader("eazybank-correlation-id") String correlationId,
+            @RequestBody Customer customer) {
         Account account = accountRepository.findByCustomerCustomerId(customer.getCustomerId());
-        List<Card> cards = cardsFeignClient.getCardDetails(customer);
-        List<Loan> loans = loansFeignClient.getLoans(customer);
+        List<Card> cards = cardsFeignClient.getCardDetails(correlationId, customer);
+        List<Loan> loans = loansFeignClient.getLoans(correlationId, customer);
 
         return CustomerDetails.builder()
                 .account(account)
