@@ -89,7 +89,7 @@
                         </exclude>
                     </excludes>
                     <image>
-                        <name>mazurenko/cards</name>
+                        <name>4nm2/cards</name>
                     </image>
                 </configuration>
             </plugin>
